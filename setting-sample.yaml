@@ -1,0 +1,19 @@
+#
+# SlackRefs: Slack web hook URL references list
+#
+SlackRefs:
+  - &Priv https://hooks.slack.com/services/xxxxxxxxx/xxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxxx
+  - &OfficeAll https://hooks.slack.com/services/xxxxxxxxx/xxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxxx
+  - &DevTeam https://hooks.slack.com/services/xxxxxxxxx/xxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxxx
+
+#
+# Relatioins:
+#   key - SNS topic name.
+#   value - Slack web hook URL. You can refer SlackRefs using *, (*MyChannel1)
+#
+Relations:
+  PrivTopic: *Priv
+  BuildTopic:  # allow specify multiple channel
+    - *Priv
+    - *OfficeAll
+    - *DevTeam
